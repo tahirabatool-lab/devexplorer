@@ -17,8 +17,8 @@ const Home = () => {
     <div className="max-w-6xl mx-auto px-4 py-10">
       {/* Hero */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-3">Developer Dashboard</h1>
-        <p className="text-gray-400 text-lg max-w-xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Developer Dashboard</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-xl mx-auto">
           Explore trending repositories, developer articles, and remote jobs — all in one place.
         </p>
       </div>
@@ -26,8 +26,8 @@ const Home = () => {
       {/* Trending Repositories */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-white">Trending Repositories</h2>
-          <Link to="/repositories" className="text-indigo-400 hover:text-indigo-300 text-sm transition">View all →</Link>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Trending Repositories</h2>
+          <Link to="/repositories" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 text-sm transition">View all →</Link>
         </div>
         {reposLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -45,8 +45,8 @@ const Home = () => {
       {/* Latest Articles */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-white">Latest Articles</h2>
-          <Link to="/articles" className="text-indigo-400 hover:text-indigo-300 text-sm transition">View all →</Link>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Latest Articles</h2>
+          <Link to="/articles" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 text-sm transition">View all →</Link>
         </div>
         {articlesLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

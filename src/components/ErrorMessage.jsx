@@ -3,8 +3,8 @@ import { FaExclamationTriangle } from 'react-icons/fa'
 
 const ErrorMessage = ({ message = 'Unable to fetch data. Please try again later.', onRetry }) => (
   <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-    <FaExclamationTriangle className="text-red-400 text-4xl" />
-    <p className="text-gray-300 text-base max-w-md">{message}</p>
+    <FaExclamationTriangle className="text-red-500 dark:text-red-400 text-4xl" />
+    <p className="text-gray-600 dark:text-gray-300 text-base max-w-md">{message}</p>
     {onRetry && (
       <button
         onClick={onRetry}

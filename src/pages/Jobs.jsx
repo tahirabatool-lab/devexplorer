@@ -57,14 +57,14 @@ const Jobs = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-white mb-6">Remote Developer Jobs</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Remote Developer Jobs</h1>
 
       <input
         type="text"
         value={search}
         onChange={e => setSearch(e.target.value)}
         placeholder="Search by role, company, or skill..."
-        className="w-full sm:w-96 bg-gray-800 text-white border border-gray-600 rounded px-4 py-2 mb-6 focus:outline-none focus:border-indigo-500"
+        className="w-full sm:w-96 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded px-4 py-2 mb-6 focus:outline-none focus:border-indigo-500"
       />
 
       {loading ? (
@@ -74,7 +74,7 @@ const Jobs = () => {
       ) : error ? (
         <ErrorMessage message={error} />
       ) : filtered.length === 0 ? (
-        <p className="text-gray-500 text-center py-16">No jobs found matching your search.</p>
+        <p className="text-gray-600 dark:text-gray-500 text-center py-16">No jobs found matching your search.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {filtered.slice(0, 20).map(job => (

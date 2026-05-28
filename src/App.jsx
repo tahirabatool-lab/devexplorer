@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import useTheme from './hooks/useTheme'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Repositories from './pages/Repositories'
@@ -7,16 +8,19 @@ import Articles from './pages/Articles'
 import Jobs from './pages/Jobs'
 
 const App = () => {
+  const { isDark } = useTheme()
+
   useEffect(() => {
-    const theme = localStorage.getItem('theme')
-    if (theme !== 'light') {
+    if (isDark) {
       document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
     }
-  }, [])
+  }, [isDark])
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-950 dark:bg-gray-950 text-white transition-colors duration-300">
+      <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
         <Navbar />
         <main>
           <Routes>

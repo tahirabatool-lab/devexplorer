@@ -55,7 +55,7 @@ const Repositories = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-white mb-6">Repository Explorer</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Repository Explorer</h1>
 
       {/* Search + Filters */}
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-3">
@@ -64,12 +64,12 @@ const Repositories = () => {
           value={query}
           onChange={e => { setQuery(e.target.value); setInputError(null) }}
           placeholder="Search repositories..."
-          className="flex-1 bg-gray-800 text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-indigo-500"
+          className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-indigo-500"
         />
         <select
           value={language}
           onChange={e => setLanguage(e.target.value)}
-          className="bg-gray-800 text-white border border-gray-600 rounded px-3 py-2"
+          className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded px-3 py-2"
         >
           <option value="">All languages</option>
           {LANGUAGES.filter(Boolean).map(l => <option key={l} value={l}>{l}</option>)}
@@ -77,7 +77,7 @@ const Repositories = () => {
         <select
           value={sort}
           onChange={e => setSort(e.target.value)}
-          className="bg-gray-800 text-white border border-gray-600 rounded px-3 py-2"
+          className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded px-3 py-2"
         >
           {SORTS.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
         </select>
@@ -89,7 +89,7 @@ const Repositories = () => {
         </button>
       </form>
 
-      {inputError && <p className="text-red-400 text-sm mb-4">{inputError}</p>}
+      {inputError && <p className="text-red-500 dark:text-red-400 text-sm mb-4">{inputError}</p>}
 
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
@@ -98,7 +98,7 @@ const Repositories = () => {
       ) : error ? (
         <ErrorMessage message={error} onRetry={() => fetchRepos(query)} />
       ) : repos.length === 0 ? (
-        <p className="text-gray-500 text-center py-16">No repositories found. Try a different search.</p>
+        <p className="text-gray-600 dark:text-gray-500 text-center py-16">No repositories found. Try a different search.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
           {repos.map(repo => <RepoCard key={repo.id} repo={repo} />)}

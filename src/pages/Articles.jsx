@@ -31,7 +31,7 @@ const Articles = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-white mb-6">Developer Articles</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Developer Articles</h1>
 
       {/* Tag filter */}
       <div className="flex flex-wrap gap-2 mb-8">
@@ -42,7 +42,7 @@ const Articles = () => {
             className={`px-3 py-1.5 rounded-full text-sm transition ${
               tag === t
                 ? 'bg-indigo-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
             }`}
           >
             {t || 'All'}
@@ -57,7 +57,7 @@ const Articles = () => {
       ) : error ? (
         <ErrorMessage message={error} onRetry={() => fetchArticles(tag)} />
       ) : articles.length === 0 ? (
-        <p className="text-gray-500 text-center py-16">No articles found for this tag.</p>
+        <p className="text-gray-600 dark:text-gray-500 text-center py-16">No articles found for this tag.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {articles.map(a => <ArticleCard key={a.id} article={a} />)}
