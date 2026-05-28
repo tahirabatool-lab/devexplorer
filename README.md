@@ -2,7 +2,7 @@
 
 A developer-focused dashboard that aggregates GitHub repositories, Dev.to articles, and remote job listings from public APIs.
 
-**Live demo:** [https://devexplorer.vercel.app](https://devexplorer.vercel.app)
+**Live demo:** https://project-hfi9m.vercel.app
 
 ## Features
 
